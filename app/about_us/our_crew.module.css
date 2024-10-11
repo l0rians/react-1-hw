@@ -1,0 +1,24 @@
+.ourCrew {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.ourCrew li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.ourCrew img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 30%;
+  margin-bottom: 10px;
+}

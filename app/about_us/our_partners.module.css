@@ -1,0 +1,22 @@
+.ourPartners {
+  display: flex;
+  margin-top: 30px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.ourPartners li {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.ourPartners img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
