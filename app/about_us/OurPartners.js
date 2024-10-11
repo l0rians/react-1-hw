@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import styles from "./our_partners.module.css";
 
 const OurPartners = () => {
   return (
