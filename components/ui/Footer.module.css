@@ -58,3 +58,20 @@
   text-decoration: none;
   padding-block: var(--spacing-04);
 }
+
+.socialItem a {
+  font-size: 16px;
+  line-height: 1px;
+}
+
+.socialItem {
+  display: flex;
+  align-items: center;
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
