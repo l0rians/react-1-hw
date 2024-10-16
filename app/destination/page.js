@@ -84,10 +84,9 @@ export const Destinations = () => {
           <p>
             {selectedPlanets.length === 0
               ? "No planets in wishlist :("
-              : `You have ${selectedPlanets.length} in your wishlist`}
+              : `You have ${selectedPlanets.length} planet(s) in your wishlist`}
           </p>
           <b>List coming soon after lesson 3!</b>
-
           {/* STOP! - this is for week 3!*/}
           {/* TASK - React 1 week 3 */}
           {/* Import the AddWishlistItem react component */}
