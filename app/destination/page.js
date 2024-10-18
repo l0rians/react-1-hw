@@ -22,10 +22,7 @@ const PlanetCard = ({
         </h2>
         <p>{description}</p>
       </div>
-      <button
-        className="roundButton"
-        onClick={() => onAddOrRemovePlanet(name, 0)}
-      >
+      <button className="roundButton" onClick={() => onAddOrRemovePlanet(name)}>
         {isSelected ? "REMOVE" : "ADD PLANET"}
       </button>
     </div>
@@ -113,7 +110,7 @@ export const Destinations = () => {
         <section className="card">
           <h2>Possible destinations</h2>
 
-          {listOfPlanets.map((planet) => {
+          {listOfPlanets.map((planet, index) => {
             return (
               <PlanetCard
                 key={planet.name}
@@ -121,7 +118,7 @@ export const Destinations = () => {
                 description={planet.description}
                 thumbnail={planet.thumbnail}
                 isSelected={selectedPlanets.includes(planet.name)}
-                onAddOrRemovePlanet={onAddOrRemovePlanet}
+                onAddOrRemovePlanet={(name) => onAddOrRemovePlanet(name, index)}
               />
             );
           })}
