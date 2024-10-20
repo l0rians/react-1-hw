@@ -66,7 +66,11 @@ export const Destinations = () => {
     if (!selectedPlanets.includes(name)) {
       onAddPlanet([...selectedPlanets, name]);
     }
+    if (selectedPlanets.includes(name)) {
+      onAddPlanet(selectedPlanets.filter((planet) => planet !== name));
+    }
     numberOfPlanets = selectedPlanets.length;
+
     console.log(
       `You seleceted the following planet: ${name}, with the index of ${index}`
     );
