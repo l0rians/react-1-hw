@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 import styles from "@/components/destination/destination.module.css";
-import { PlanetWishlistItem } from "@/components/destination/PlanetWishlistItem";
-import { AddWishlistItem } from "@/components/destination/AddWishlistItem";
+import PlanetWishlistItem from "@/components/destination/PlanetWishlistItem";
+import AddWishlistItem from "@/components/destination/AddWishlistItem";
 
 const PlanetCard = ({
   name,
@@ -87,29 +87,26 @@ export const Destinations = () => {
               ? "No planets in wishlist :("
               : `You have ${selectedPlanets.length} planet(s) in your wishlist`}
           </p>
-          <b>List coming soon after lesson 3!</b>
-          {/* STOP! - this is for week 3!*/}
-          {/* TASK - React 1 week 3 */}
-          {/* Import the AddWishlistItem react component */}
-          {/* <AddWishlistItem /> */}
-          {/* TASK - React 1 week 3 */}
-          {/* Convert the list, so it is using selectedPlanets.map() to display the items  */}
-          {/* Implement the "REMOVE" function */}
-          {/* uncomment the following code snippet: */}
-          {/* 
+
+          <AddWishlistItem
+            onAddWishlistItem={(newItem) => {
+              onAddPlanet([...selectedPlanets, newItem.name]);
+            }}
+          />
+
           <h3>Your current wishlist</h3>
           <div className={styles.wishlistList}>
-            <PlanetWishlistItem 
-              name="europa"
-              onRemove={() => removeFromWishlist('europa')}
-              thumbnail="/destination/image-europa.png"
-            />
-            <PlanetWishlistItem 
-              name="europa"
-              onRemove={() => removeFromWishlist('europa')}
-              thumbnail="/destination/image-europa.png"
-            />
-          </div> */}
+            {selectedPlanets.map((planet, index) => (
+              <PlanetWishlistItem
+                key={planet}
+                name={planet}
+                onRemove={() => onAddOrRemovePlanet(planet, index)}
+                thumbnail={
+                  listOfPlanets.find((p) => p.name === planet)?.thumbnail
+                }
+              />
+            ))}
+          </div>
         </section>
         <section className="card">
           <h2>Possible destinations</h2>
