@@ -53,8 +53,6 @@ export const Navbar = () => {
               index={index}
             />
           ))}
-          {/* TASK - React 1 week 3 */}
-          {/* replace repeating content by using navbarItems.map(() => <NavLink />) */}
         </ul>
       </nav>
     </header>
