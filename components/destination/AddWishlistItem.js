@@ -8,7 +8,6 @@ export const AddWishlistItem = ({ onAddWishlistItem }) => {
     "/destination/image-europa.png"
   );
 
-  console.log("Thumbnail urL:", thumbnail);
   const [wishlistItem, setWishlistItem] = useState("");
 
   const handleThumbnailChange = (event) => {
@@ -23,10 +22,6 @@ export const AddWishlistItem = ({ onAddWishlistItem }) => {
     const finalThumbnail =
       thumbnail === "custom" ? "/destination/image-europa.png" : thumbnail;
     if (wishlistItem) {
-      console.log("Adding wishlist item:", {
-        name: wishlistItem,
-        thumbnail: finalThumbnail,
-      });
       onAddWishlistItem({ name: wishlistItem, thumbnail: finalThumbnail });
 
       setWishlistItem("");
